@@ -1,10 +1,8 @@
 $(document).ready(function () {
+//do this when page loads
 
 
-//add lock icon to all buttons
-
-
-//display current time and date with momentjs
+//display current time and date with momentjs + format
 let todaysDate = moment().format("MMMM Do YYYY");
 let displayDate = document.getElementById("currentDay");
 displayDate.innerHTML= todaysDate;
@@ -17,29 +15,39 @@ let currentHour = moment().format("h:mm:ss");
 $(".time-div").each(function () {
 
 
-    var timeDiv = $(this).attr("id");
+var timeDiv = $(this).attr("id");
     
-    if (currentHour == timeDiv) {
+ if (currentHour == timeDiv) {
       $(this).addClass("present");
 
-    } else if (currentHour < timeDiv) {
+
+
+
+ } else if (currentHour < timeDiv) {
       $(this).removeClass("present");
       $(this).addClass("future");
 
-    } else if (currentHour > timeDiv) {
+ } else if (currentHour > timeDiv) {
       $(this).removeClass("future");
       $(this).addClass("past");
     }
   });
+
+
+//red is not working currently
+
+
 
 //localstorage button function create key value pairs
  $(".btn").click(function (event) {
      //prevents refreshing
     event.preventDefault();
     // key value pairs
-    var value = $(this).siblings(".time-block").val();
+    //textfrom all the time block siblings & time from the div id
+    var text = $(this).siblings(".time-block").val();
     var time = $(this).parent().attr("id").val();
-    localStorage.setItem(time, value);
+    //save to local storage
+    localStorage.setItem(time, text);
   });
 
 
@@ -47,32 +55,14 @@ $(".time-div").each(function () {
 
 
 
-
-  //recall localStorage
-  $("#9:00 .time-block").val(localStorage.getItem("09"));
-
-  $("#10:00 .time-block").val(localStorage.getItem("10"));
-
-  $("#11:00 .time-block").val(localStorage.getItem("11"));
-
-  $("#12:00 .time-block").val(localStorage.getItem("12"));
-
-  $("#1:00 .time-block").val(localStorage.getItem("13"));
-
-  $("#2:00 .time-block").val(localStorage.getItem("14"));
-
-  $("#3:00 .time-block").val(localStorage.getItem("15"));
-
-  $("#4:00 .time-block").val(localStorage.getItem("16"));
-
-  $("#5:00 .time-block").val(localStorage.getItem("17"));
+//recall local storage not yet finished
 
 
 
 
 
 
-
+LocalStorage.getItem(time,text);
 
 
 

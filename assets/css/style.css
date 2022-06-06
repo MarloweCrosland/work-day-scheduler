@@ -36,9 +36,6 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;
 }
 
-.btn span{
-  font-style: --fa-font-solid;
-}
 
 .past{
   background-color: gray;
