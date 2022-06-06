@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+
+//add lock icon to all buttons
+
+
 //display current time and date with momentjs
 let todaysDate = moment().format("MMMM Do YYYY");
 let displayDate = document.getElementById("currentDay");
@@ -28,8 +32,9 @@ $(".time-div").each(function () {
     }
   });
 
-//localstorage
+//localstorage button function create key value pairs
  $(".btn").click(function (event) {
+     //prevents refreshing
     event.preventDefault();
     // key value pairs
     var value = $(this).siblings(".time-block").val();
