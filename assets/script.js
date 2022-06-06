@@ -12,10 +12,8 @@ let currentHour = moment().format("h:mm:ss");
 //add classes to change style accordingly
 $(".time-div").each(function () {
 
-    
 
-
-    var timeDiv = $(this).attr("id").val();
+    var timeDiv = $(this).attr("id");
     
     if (currentHour == timeDiv) {
       $(this).addClass("present");
