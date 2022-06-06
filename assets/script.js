@@ -11,6 +11,10 @@ let currentHour = moment().format("h:mm:ss");
 //checking if the time slot is in the past present or future
 //add classes to change style accordingly
 $(".time-div").each(function () {
+
+    
+
+
     var timeDiv = $(this).attr("id").val();
     
     if (currentHour == timeDiv) {
@@ -27,7 +31,7 @@ $(".time-div").each(function () {
   });
 
 //localstorage
- $(".saveBtn").click(function (event) {
+ $(".btn").click(function (event) {
     event.preventDefault();
     // key value pairs
     var value = $(this).siblings(".time-block").val();
