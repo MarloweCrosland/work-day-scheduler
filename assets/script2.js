@@ -32,7 +32,7 @@ $(".time-div").each(function () {
 });
 
 
-//localStorage function not working yet, im still trying to figure this out on my own
+//localStorage function not working yet
 $(".btn").click(function (event) {
     event.preventDefault();
     var value = $(".time-block").text();
