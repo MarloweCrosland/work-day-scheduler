@@ -17,15 +17,17 @@ $(".time-div").each(function () {
 
 var timeDiv = $(this).attr("id");
     
- if (currentHour == timeDiv) {
-      $(this).addClass("present");
-
+ if (currentHour === timeDiv) {
+  $(this).removeClass("past");
+  $(this).removeClass("future");
+  $(this).addClass("present");
 
 
 
  } else if (currentHour < timeDiv) {
-      $(this).removeClass("present");
-      $(this).addClass("future");
+  $(this).removeClass("future");
+  $(this).removeClass("present");
+  $(this).addClass("past");
 
  } else if (currentHour > timeDiv) {
       $(this).removeClass("future");
@@ -33,37 +35,26 @@ var timeDiv = $(this).attr("id");
     }
   });
 
+//localStorage
+  // save button will save key value pair 
+  $(".btn").on("click", function () {
+      // Get description value and time id
+      var text = $(this).siblings(".description").val();
+      var time = $(this).parent().attr("id");
 
-//red is not working currently
+      // Save text in local storage
+      localStorage.setItem(time, text);
+  })
 
-
-
-//localstorage button function create key value pairs
- $(".btn").click(function (event) {
-     //prevents refreshing
-    event.preventDefault();
-    // key value pairs
-    //textfrom all the time block siblings & time from the div id
-    var text = $(this).siblings(".time-block").val();
-    var time = $(this).parent().attr("id").val();
-    //save to local storage
-    localStorage.setItem(time, text);
-  });
-
-
-
-
-
-
-//recall local storage not yet finished
-
-
-
-
-
-
-LocalStorage.getItem(time,text);
-
+$("#9:00 .description").val(localStorage.getItem("9:00"));
+$("#10:00 .description").val(localStorage.getItem("10:00"));
+$("#11:00 .description").val(localStorage.getItem("11:00"));
+$("#12:00 .description").val(localStorage.getItem("12:00"));
+$("#1:00 .description").val(localStorage.getItem("1:00"));
+$("#2:00 .description").val(localStorage.getItem("2:00"));
+$("#3:00 .description").val(localStorage.getItem("3:00"));
+$("#4:00 .description").val(localStorage.getItem("4:00"));
+$("#5:00 .description").val(localStorage.getItem("5:00"));
 
 
 
