@@ -1,4 +1,4 @@
-$(document).ready(funtion()){
+$(document).ready(function () {
 
 
 //display current time and date with moment.js
@@ -6,7 +6,7 @@ $(document).ready(funtion()){
 let todaysDate = moment().format ('MMMM Do YYYY, h:mm:ss a');
 let displayedDate = document.getElementById('currentDay');
 displayedDate.innerHTML= todaysDate;
-let currentHour = moment().format("h:mm:ss");
+let currentHour = moment().format("HH");
 
 
 //comparing the current time to the time block id
@@ -32,14 +32,15 @@ $(".time-div").each(function () {
 });
 
 
-//localStorage function
+//localStorage function not working yet, im still trying to figure this out on my own
 $(".btn").click(function (event) {
     event.preventDefault();
-    var value = $(this).siblings(".time-block").val();
+    var value = $(".time-block").text();
     var time = $(this).parent().attr("id").split("-")[1];
+    //set item to key value pair
     localStorage.setItem(time, value);
   });
-
+//retrieve items
 $("#hour-09.description").val(localStorage.getItem("09"));
 $("#hour-10.description").val(localStorage.getItem("10"));
 $("#hour-11.description").val(localStorage.getItem("11"));
