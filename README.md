@@ -1,5 +1,7 @@
 # Work Day Scheduler
 
+live site at : https://marlowecrosland.github.io/work-day-scheduler/
+
 This is a daily planner/scheduler with which you can plan you work day
 
 
